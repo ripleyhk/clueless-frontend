@@ -5,7 +5,7 @@ import Message from './components/Message';
 
 import './App.css';
 
-const host = 'http://localhost:8080';
+const host = process.env.BACKEND_HOSTNAME;
 
 const postMessage = async (user, message) => {
   await fetch(`${host}/messages`, {
