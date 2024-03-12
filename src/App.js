@@ -86,7 +86,7 @@ function App() {
     <div className="App">
       <div className='content'>
           <div className='content-header'>
-            <input type='text' className='text-area' value={username}
+            <input type='text' className='username' value={username}
             placeholder="username"  onChange={e => {setUsername(e.target.value)}}
             />
           </div>
