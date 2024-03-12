@@ -1,0 +1,123 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  text-align: left;
+
+  /* background-color: white; */
+  background-color: rgb(113, 115, 129);
+  color: black;
+  font-size: calc(10px + 2vmin);
+}
+
+.content > * {
+  padding: 10px;
+}
+
+.content-header {
+  flex: 1;
+}
+
+.messages {
+  flex: 8;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px 10px 10px 0px;
+  width: 40%;
+}
+
+.username {
+  font-size: calc(5px + 2vmin);
+  font-weight: 100;
+}
+
+.sender {
+  background-color: rgb(101, 191, 219);
+  align-self: flex-end;
+  border-radius: 10px 10px 0px 10px;
+}
+
+.receiver {
+  background-color: rgb(193, 189, 189);
+  align-self: flex-start;
+}
+
+.delete-button {
+  text-align: right;
+  font-size: calc(1px + 2vmin);
+  color: rgb(78, 78, 78);
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  font-weight: 500;
+  color: black;
+}
+
+.input-area {
+  flex: 2;
+}
+
+.input-content {
+  display: flex;
+  background-color: white;
+  height: 100%;
+  /* padding-left: 10px; */
+  font-size: large;
+}
+
+.text-area {
+  flex: 9;
+  resize: none;
+  padding-left: 10px;
+  font-size: xx-large;
+}
+
+.submit-button {
+  flex: 1;
+  background-color: rgb(15, 120, 138);
+  border: 3px solid rgb(15, 109, 113);
+  font-size: 100px;
+  color: rgb(187, 220, 222);
+  text-align: center;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background-color: rgb(16, 88, 100);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
