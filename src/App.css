@@ -21,101 +21,49 @@
   font-size: calc(10px + 2vmin);
 }
 
-.content-header {
-  padding: 10px;
+.board {
+  background-color: rgb(104, 89, 74);
+  padding: 20px;
   flex: 1;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
-.messages {
-  padding: 10px;
-  width: 100%;
-  flex: 8;
-  overflow-y: scroll;
+.hallway {
   display: flex;
-  flex-direction: column;
+  background-color: rgb(70, 46, 11);
 }
 
-.message {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px 10px 10px 0px;
-  width: 40%;
-}
-
-.username {
-  font-size: calc(5px + 2vmin);
-  font-weight: 100;
-  max-width: 90%;
-  font-size: xx-large;
-}
-
-.sender {
-  background-color: rgb(101, 191, 219);
-  align-self: flex-end;
-  border-radius: 10px 10px 0px 10px;
-}
-
-.receiver {
-  background-color: rgb(193, 189, 189);
-  align-self: flex-start;
-}
-
-.delete-button {
-  text-align: right;
-  font-size: calc(1px + 2vmin);
-  color: rgb(78, 78, 78);
-}
-
-.delete-button:hover {
+.hallway-active:hover {
+  background-color: rgb(144, 102, 44);
   cursor: pointer;
-  font-weight: 500;
-  color: black;
 }
 
-.input-area {
-  flex: 2;
-  width: 100%;
+.horizontal {
+  margin: 20px 0;
 }
 
-.input-content {
+.vertical {
+  margin: 0 20px;
+}
+
+.room {
   display: flex;
-  background-color: white;
   height: 100%;
-  width: 100%;
-  font-size: large;
+  background-color: green;
 }
 
-.text-area {
-  flex: 8;
-  resize: none;
-  /* padding-left: 10px; */
-  font-size: xx-large;
-}
-
-.submit-button {
-  flex: 1;
-  background-color: rgb(15, 120, 138);
-  border: 3px solid rgb(15, 109, 113);
-  font-size: 100px;
-  color: rgb(187, 220, 222);
-  text-align: center;
-}
-
-.submit-button:hover {
+.room-active:hover {
+  background-color: rgb(100, 195, 100);
   cursor: pointer;
-  background-color: rgb(16, 88, 100);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.player {
+  background-color: red;
+  margin: 5px;
+  width: 30px;
+  height: 30px;
 }
