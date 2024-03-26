@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/clueless-frontend/static/css/main.435c9dc6.css",
-    "main.js": "/clueless-frontend/static/js/main.7ddc2b06.js",
+    "main.css": "/clueless-frontend/static/css/main.4374028d.css",
+    "main.js": "/clueless-frontend/static/js/main.0c36b269.js",
     "static/js/453.52768f7a.chunk.js": "/clueless-frontend/static/js/453.52768f7a.chunk.js",
     "index.html": "/clueless-frontend/index.html",
-    "main.435c9dc6.css.map": "/clueless-frontend/static/css/main.435c9dc6.css.map",
-    "main.7ddc2b06.js.map": "/clueless-frontend/static/js/main.7ddc2b06.js.map",
+    "main.4374028d.css.map": "/clueless-frontend/static/css/main.4374028d.css.map",
+    "main.0c36b269.js.map": "/clueless-frontend/static/js/main.0c36b269.js.map",
     "453.52768f7a.chunk.js.map": "/clueless-frontend/static/js/453.52768f7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.435c9dc6.css",
-    "static/js/main.7ddc2b06.js"
+    "static/css/main.4374028d.css",
+    "static/js/main.0c36b269.js"
   ]
 }
