@@ -6,7 +6,18 @@ export default class Board extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            player: 'room1',
+            turn: 0,
+            order: ["player1", "player2"],
+            players: {
+                player1: {
+                    loc: 'room1',
+                    color: 'red'
+                },
+                player2: {
+                    loc: 'room2',
+                    color: 'blue'
+                },
+            }
         }
 
         this.locations = [
@@ -55,40 +66,60 @@ export default class Board extends React.Component {
 
     getPlayers(loc) {
         let players = [];
-        if (this.inLocation(loc)) {
-            players.push('player');
+        for (const[player, value] of Object.entries(this.state.players)) {
+            if (this.inLocation(value, loc)) {
+                players.push(value);
+            }
         }
         return players;
     }
 
-    inLocation(loc) {
-        return this.state.player === loc;
+    inLocation(player, loc) {
+        return player.loc === loc;
     }
 
     isAdjacent(loc) {
-        let curr = this.getLocationById(this.state.player);
-        if (curr.adj.includes(loc)) {
-            return true;
-        }
+        let player = this.getCurrentPlayer();
+        let curr = this.getLocationById(player.loc);
+        return curr.adj.includes(loc);
     }
 
     setLocation(loc) {
         if (this.isAdjacent(loc)) {
-            this.setState({player: loc});
+            let players = this.state.players;
+            let id = this.state.order[this.state.turn];
+            let player = this.getCurrentPlayer();
+            player.loc = loc;
+            players[id] = player;
+            this.setState({players: players});
+            this.updateTurn();
         }
+    }
+
+    updateTurn() {
+        let turn = this.state.turn;
+        turn += 1;
+        turn = turn % this.state.order.length;
+        this.setState({turn: turn});
+    }
+
+    getCurrentPlayer() {
+        let playerId = this.state.order[this.state.turn];
+        return this.state.players[playerId];
     }
 
     render() {
 
         let locItems = [];
+        let curr = this.getCurrentPlayer();
         for (let loc of this.locations) {
             let players = this.getPlayers(loc.id);
             let adjacent = this.isAdjacent(loc.id);
             let setLoc = () => this.setLocation(loc.id);
             if (loc.type === 'room') {
-                locItems.push(<Room key={loc.id} id={loc.id} players={players} isAdjacent={adjacent} setLocation={setLoc}/>)
+                locItems.push(<Room key={loc.id} id={loc.id} players={players} isAdjacent={adjacent} setLocation={setLoc} current={curr}/>)
             } else if (loc.type === 'hall') {
-                locItems.push(<Hallway key={loc.id} id={loc.id} align={loc.align} players={players} isAdjacent={adjacent} setLocation={setLoc}/>)
+                locItems.push(<Hallway key={loc.id} id={loc.id} align={loc.align} players={players} isAdjacent={adjacent} setLocation={setLoc} current={curr}/>)
             } else {
                 locItems.push(<div/>)
             }

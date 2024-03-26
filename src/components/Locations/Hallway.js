@@ -13,8 +13,9 @@ export default class Hallway extends React.Component {
         }
 
         let players = [];
-        for (let p in this.props.players) {
-            players.push(<Player/>);
+        for (const[p, value] of Object.entries(this.props.players)) {
+            let curr = (value === this.props.current);
+            players.push(<Player key={`player${p+1}`} color={value.color} current={curr}/>);
         }
 
         return (

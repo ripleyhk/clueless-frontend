@@ -16,13 +16,15 @@
   height: 100%;
   width: 100%;
   text-align: left;
+  align-items: center;
   background-color: rgb(113, 115, 129);
   color: black;
   font-size: calc(10px + 2vmin);
 }
 
 .board {
-  background-color: rgb(104, 89, 74);
+  height: 100vh;
+  width: 100vh;
   padding: 20px;
   flex: 1;
   display: grid;
@@ -53,7 +55,7 @@
 .room {
   display: flex;
   height: 100%;
-  background-color: green;
+  background-color: rgb(44, 75, 17);
 }
 
 .room-active:hover {
@@ -62,8 +64,20 @@
 }
 
 .player {
-  background-color: red;
+  background-color: white;
   margin: 5px;
   width: 30px;
   height: 30px;
+}
+
+.player-red {
+  background-color: red;
+}
+
+.player-blue {
+  background-color: blue;
+}
+
+.player-current {
+  border: solid white 1px;
 }
