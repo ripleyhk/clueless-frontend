@@ -12,7 +12,7 @@
 
 .content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
   width: 100%;
   text-align: left;
@@ -22,11 +22,29 @@
   font-size: calc(10px + 2vmin);
 }
 
-.board {
-  height: 100vh;
-  width: 100vh;
-  padding: 20px;
+.cards {
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space space-between;
+  gap: 10px;
+  height: 25%;
+  align-self: baseline;
+  margin: 10px;
+}
+
+.card {
+  display: flex;
+  width: 100px;
+  padding: 10px;
+  background-color: rgb(177, 167, 35);
+  font-size: large;
+}
+
+.board {
+  flex: 2;
+  height: 100%;
+  margin: 40px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -58,7 +76,6 @@
 
 .room {
   display: flex;
-  height: 100%;
   background-color: rgb(44, 75, 17);
 }
 
@@ -88,4 +105,26 @@
 
 .player-current {
   border: solid white 1px;
+}
+
+.actions {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space space-between;
+  gap: 10px;
+  height: 25%;
+  align-self: baseline;
+  margin: 10px;
+}
+
+.action {
+  background-color: white;
+  width: 75%;
+  padding: 10px;
+}
+
+.action:hover {
+  cursor: pointer;
+  background-color: rgb(223, 216, 183);
 }
