@@ -36,12 +36,16 @@
 
 .hallway {
   display: flex;
-  background-color: rgb(70, 46, 11);
+  background-color: rgb(57, 39, 10);
+}
+
+.hallway-active{
+  cursor: pointer;
+  background-color: rgb(103, 69, 17);
 }
 
 .hallway-active:hover {
   background-color: rgb(144, 102, 44);
-  cursor: pointer;
 }
 
 .horizontal {
@@ -58,9 +62,13 @@
   background-color: rgb(44, 75, 17);
 }
 
+.room-active {
+  background-color: rgb(66, 113, 25);
+  cursor: pointer;
+}
+
 .room-active:hover {
   background-color: rgb(100, 195, 100);
-  cursor: pointer;
 }
 
 .player {
